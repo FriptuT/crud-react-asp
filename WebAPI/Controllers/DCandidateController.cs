@@ -54,10 +54,7 @@ namespace WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDCandidate(int id, DCandidate dCandidate)
         {
-            if (id != dCandidate.id)
-            {
-                return BadRequest();
-            }
+            dCandidate.id = id;
 
             _context.Entry(dCandidate).State = EntityState.Modified;
 
