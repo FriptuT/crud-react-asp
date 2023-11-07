@@ -9,15 +9,14 @@ export const ACTION_TYPES = {
 };
 
 export const fetchAll = () => {
-  api
+   api
     .dCandidate()
     .fetchAll()
-    .then((Response) => {
+    .then((response) => {
       const dispatch = useDispatch();
-
       dispatch({
         type: ACTION_TYPES.FETCH_ALL,
-        payload: Response.data,
+        payload: response.data,
       });
     })
     .catch((err) => console.log(err));

@@ -10,10 +10,17 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DonationDBContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
+builder.Services.AddCors();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors(options => 
+options.WithOrigins("http://localhost:3000")
+.AllowAnyHeader()
+.AllowAnyMethod());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

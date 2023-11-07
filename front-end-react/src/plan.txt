@@ -9,8 +9,8 @@ src:
 
 ------- components
         |
-        -DCandidateForm.js (form operations)
-        -DCandidates.js (list of records)
+        -DCandidateForm.js (form operations) - child component
+        -DCandidates.js (list of records) - parent component
         -useForm.js ( handles common form operations)
 
 
